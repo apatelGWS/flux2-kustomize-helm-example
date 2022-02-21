@@ -6,19 +6,34 @@ spec:
   interval: 5m
   url: https://stefanprodan.github.io/podinfo
 ---
+# apiVersion: source.toolkit.fluxcd.io/v1beta1
+# kind: GitRepository
+# metadata:
+#   name: podinfo
+#   namespace: flux-system
+# spec:
+#   # The interval at which to check the upstream for updates
+#   interval: 10m
+#   # The repository URL, can be a HTTP/S or SSH address
+#   url: https://github.com/apatelGWS/flux2-kustomize-helm-example.git
+#   # The Git reference to checkout and monitor for changes
+#   # (defaults to master)
+#   # For all available options, see:
+#   # https://toolkit.fluxcd.io/components/source/api/#source.toolkit.fluxcd.io/v1beta1.GitRepositoryRef
+#   ref:
+#     branch: main
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: podinfo
   namespace: flux-system
 spec:
-  # The interval at which to check the upstream for updates
-  interval: 10m
-  # The repository URL, can be a HTTP/S or SSH address
-  url: https://github.com/apatelGWS/flux2-kustomize-helm-example.git
-  # The Git reference to checkout and monitor for changes
-  # (defaults to master)
-  # For all available options, see:
-  # https://toolkit.fluxcd.io/components/source/api/#source.toolkit.fluxcd.io/v1beta1.GitRepositoryRef
+  interval: 1m
+  url: https://github.com/stefanprodan/podinfo
   ref:
-    branch: main
+    branch: master
+  ignore: |
+    # exclude all
+    /*
+    # include charts directory
+    !/charts/  
