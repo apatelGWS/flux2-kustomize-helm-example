@@ -25,23 +25,23 @@
 #       annotations:
 #         kubernetes.io/ingress.class: nginx
 # ---
-apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: GitRepository
-metadata:
-  name: flux-system
-  namespace: flux-system
-spec:
-  # The interval at which to check the upstream for updates
-  interval: 10m
-  # The repository URL, can be a HTTP/S or SSH address
-  url: https://github.com/apatelGWS/flux2-kustomize-helm-example.git
-  # The Git reference to checkout and monitor for changes
-  # (defaults to master)
-  # For all available options, see:
-  # https://toolkit.fluxcd.io/components/source/api/#source.toolkit.fluxcd.io/v1beta1.GitRepositoryRef
-  ref:
-    branch: main
----
+# apiVersion: source.toolkit.fluxcd.io/v1beta1
+# kind: GitRepository
+# metadata:
+#   name: flux-system
+#   namespace: flux-system
+# spec:
+#   # The interval at which to check the upstream for updates
+#   interval: 10m
+#   # The repository URL, can be a HTTP/S or SSH address
+#   url: https://github.com/apatelGWS/flux2-kustomize-helm-example.git
+#   # The Git reference to checkout and monitor for changes
+#   # (defaults to master)
+#   # For all available options, see:
+#   # https://toolkit.fluxcd.io/components/source/api/#source.toolkit.fluxcd.io/v1beta1.GitRepositoryRef
+#   ref:
+#     branch: main
+# ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
