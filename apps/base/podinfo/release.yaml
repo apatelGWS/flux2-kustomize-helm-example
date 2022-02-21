@@ -29,7 +29,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: podinfo
-  namespace: podinfo
+  namespace: flux-system
 spec:
   # The interval at which to check the upstream for updates
   interval: 10m
@@ -59,4 +59,4 @@ spec:
         kind: GitRepository
         name: podinfo
         # Optional, defaults to the namespace of the HelmRelease
-        namespace: podinfo
+        namespace: flux-system
