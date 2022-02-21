@@ -28,7 +28,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: podinfo
+  name: flux-system
   namespace: flux-system
 spec:
   # The interval at which to check the upstream for updates
@@ -57,6 +57,6 @@ spec:
       # The reference to the GitRepository
       sourceRef:
         kind: GitRepository
-        name: podinfo
+        name: flux-system
         # Optional, defaults to the namespace of the HelmRelease
         namespace: flux-system
